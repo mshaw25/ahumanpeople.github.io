@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+            
+:root {
+    --b: hsl(30, 100%, 60%);
+    --w: hsl(0, 0%, 100%);
+    --g: hsl(100, 100%, 40%);
+    --gg: hsl(100, 100%, 30%);
+    --ggg: hsl(100, 100%, 20%);
+}
+            
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 4em;
+    color: var(--w);
+}
+            
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    color: var(--w);
+}
+            
+ol li {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5em;
+    color: var(--w);
+}
+            
+.boton {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5em;
+    color: var(--w);
+    background-color: var(--g);
+    text-decoration: none;
+    border: 5px solid;
+    border-color: var(--gg);
+    padding: 0.5em;
+    transition: 0.25s;
+}
+            
+.boton a {
+    font-family: 'Ubuntu',sans-serif;
+    font-size: 1.5em;
+    color: var(--w);
+    text-decoration: none;
+}
+            
+.boton:hover {
+    background-color: var(--gg);
+    border-color: var(--ggg);
+}
+            
+body {
+    background-color: var(--b);
+    padding: 2vw 4vw;
+    margin: 0px;
+    animation-name: animado;
+    animation-duration: 1s;
+    animation-direction: normal;
+}
+
+.navegador {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+.navegador button {
+    float: left;
+    width: 18%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    color: var(--w);
+    background-color: var(--g);
+    text-decoration: none;
+    border: 2px solid;
+    border-color: var(--gg);
+    padding: 0.25em;
+    transition: 0.25s;
+}
+
+.navegador button a {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    color: var(--w);
+    text-decoration: none;
+}
+
+.navegador button:hover {
+    background-color: var(--gg);
+    border-color: var(--ggg);
+}
+
+.navegador .activo {
+    background-color: var(--gg);
+    border-color: var(--ggg);
+}
+
+.iconoGrande {
+    width: 35%;
+    height: 35%;
+    float: right;
+    margin-top: 25px;
+}
+
+.subtituloIconoGrande {
+    float: right;
+    font-size: 1.9em;
+}
+
+table {
+    border: 5px solid;
+    border-color: var(--ggg);
+    border-collapse: collapse;
+    width: 40%;
+}
+
+table tr {
+    background-color: var(--g);
+    transition: 0.25s;
+}
+
+table tr td {
+    border: 5px solid;
+    border-color: var(--ggg);
+    padding: 0.5em;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--w);
+    font-size: 1.5em;
+}
+
+table tr:hover {
+    background-color: var(--gg);
+}
+
+.resumen {
+    width: 100%;
+    height: 40vw;
+    border: 15px solid;
+    border-color: var(--ggg);
+}
+
+.formulario {
+    float: right;
+    width: 40%;
+    height: 40vw;
+    margin-top: -420px;
+    border: 15px solid;
+    border-color: var(--ggg);
+}
+
+@keyframes animado {
+    0% {opacity: 0; filter: alpha(opacity=0);}
+    100% {opacity: 1; filter: alpha(opacity=100);}
+}
