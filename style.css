@@ -3,23 +3,42 @@
 }
             
 :root {
-    --b: hsl(30, 100%, 60%);
     --w: hsl(0, 0%, 100%);
+    --ww: hsl(0, 0%, 80%);
+    --www: hsl(0, 0%, 70%);
     --g: hsl(100, 100%, 40%);
     --gg: hsl(100, 100%, 30%);
     --ggg: hsl(100, 100%, 20%);
 }
             
 h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather', serif;
     font-size: 4em;
     color: var(--w);
 }
             
 p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 2em;
     color: var(--w);
+}
+
+#medioespecial {
+    font-size: 2.25em;
+}
+
+a {
+    text-decoration: underline;
+    color: var(--w);
+    transition: 0.25s;
+}
+
+a:hover {
+    color: var(--ww);
+}
+
+a:active {
+    color: var(--www);
 }
             
 ol li {
@@ -32,12 +51,12 @@ ol li {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.5em;
     color: var(--w);
-    background-color: var(--g);
     text-decoration: none;
     border: 5px solid;
-    border-color: var(--gg);
     padding: 0.5em;
     transition: 0.25s;
+    
+    animation: ambienteCalor 600s infinite;
 }
             
 .boton a {
@@ -48,37 +67,38 @@ ol li {
 }
             
 .boton:hover {
-    background-color: var(--gg);
-    border-color: var(--ggg);
+    animation: ambienteCenizas 600s infinite;
 }
             
 body {
-    background-color: var(--b);
     padding: 2vw 4vw;
     margin: 0px;
     animation-name: animado;
     animation-duration: 1s;
     animation-direction: normal;
+    
+    animation: ambienteFrio 600s infinite;
 }
 
 .navegador {
     padding: 0px;
     border: 0px;
     margin: 0px;
+    width: 100%;
 }
 
 .navegador button {
     float: left;
-    width: 18%;
+    width: 20%;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 1em;
+    font-size: 1.5em;
     color: var(--w);
-    background-color: var(--g);
     text-decoration: none;
-    border: 2px solid;
-    border-color: var(--gg);
+    border: 3px solid;
     padding: 0.25em;
     transition: 0.25s;
+    
+    animation: ambienteCalor 600s infinite;
 }
 
 .navegador button a {
@@ -89,32 +109,47 @@ body {
 }
 
 .navegador button:hover {
-    background-color: var(--gg);
-    border-color: var(--ggg);
+    animation: ambienteCenizas 600s infinite;
 }
 
 .navegador .activo {
-    background-color: var(--gg);
-    border-color: var(--ggg);
+    animation: ambienteCenizas 600s infinite;
 }
 
 .iconoGrande {
-    width: 35%;
-    height: 35%;
-    float: right;
-    margin-top: 25px;
+    width: 100%;
+    margin-top: 10%;
+    transition: 0.25s;
+}
+
+.iconoGrande:hover {
+    box-shadow: 15px 15px 8px 0 rgba(0, 0, 0, 0.2), 5px 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .subtituloIconoGrande {
-    float: right;
     font-size: 1.9em;
+}
+
+.unaOrganizacion {
+    float: left;
+    width: 100%;
+}
+
+.unaOrganizacion div {
+    float: left;
+    width: 50%;
+}
+
+.unaSingularidad div {
+    float: left;
+    width: 100%;
 }
 
 table {
     border: 5px solid;
     border-color: var(--ggg);
     border-collapse: collapse;
-    width: 40%;
+    width: 100%;
 }
 
 table tr {
@@ -144,14 +179,76 @@ table tr:hover {
 
 .formulario {
     float: right;
-    width: 40%;
-    height: 40vw;
-    margin-top: -420px;
+    width: 90%;
+    height: 60vw;
     border: 15px solid;
     border-color: var(--ggg);
+    margin: 5%;
 }
 
 @keyframes animado {
     0% {opacity: 0; filter: alpha(opacity=0);}
     100% {opacity: 1; filter: alpha(opacity=100);}
+}
+
+@keyframes ambienteFrio {
+    0% {background-color: #8C9EF8;}
+    33.333% {background-color: #317FD8;}
+    66.667% {background-color: #3E118D;}
+    100% {background-color: #8C9EF8;}
+}
+
+@keyframes ambienteCalor {
+    0% {background-color: #FD913F; border-color: #E56502;}
+    33.333% {background-color: #FD3D12; border-color: #EE2E02;}
+    66.667% {background-color: #D51A46; border-color: #BE173E;}
+    100% {background-color: #FD913F; border-color: #E56502;}
+}
+
+@keyframes ambienteCenizas {
+    0% {background-color: #E56502; border-color: #D35D02;}
+    33.333% {background-color: #EE2E02; border-color: #DB2A02;}
+    66.667% {background-color: #BE173E; border-color: #AF1639;}
+    100% {background-color: #E56502; border-color: #D35D02;}
+}
+
+canvas {
+    background-color: var(--gg);
+}
+
+.soloTelefono {
+    display: none;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    
+    .navegador button {
+        width: 100%;
+    }
+    
+    .navegador {
+        margin-bottom: 5%;
+    }
+    
+    .unaOrganizacion div {
+        width: 100%;
+    }
+    
+    .iconoGrande {
+        display: none;
+    }
+    
+    .soloTelefono {
+        display: inline;
+    }
+    
+    div {
+        margin-bottom: 10%;
+    }
+    
+    table {
+        overflow-x: scroll;
+    }
+    
 }
