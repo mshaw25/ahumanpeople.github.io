@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        
+        <title>Jose Barrios</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Source+Sans+Pro|Merriweather" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+    </head>
+    
+    <body onload="empezalo()" id="ambienteSolido">
+        
+        <!-- Hey Ms. Sonia, how do you make it so that the ball stops once you hit the paddle?? I can't figure it out -->
+        
+        <script>
+            
+            var jugadorUno;
+            var jugadorDos;
+            var bolita;
+            
+            var WAH = 30; // the height/width of the pellet
+            var Hh = 250 - WAH/2; // y pos for the pellet
+            var Wh = 500 - WAH/2; // x pos for the pellet
+            
+            var HH = 150; // height of the paddle
+            var WW = 30; // width of the paddle
+            var hH = 250 - HH/2; // y pos for the paddles
+            var wW1 = 50; // x pos for the first paddle
+            var wW2 = 1000 - wW1 - WW; // x pos for the second paddle
+            
+            var verde = "hsl(100, 100%, 30%)"; // defines the color black
+            var blanco = "White"
+            
+            var campoIzqui = 0;
+            var campoDeche = 1000;
+            var campoAribi = 0;
+            var campoAbajo = 500;
+            var campoMitad = campoAribi / 2;
+            
+            /* -------------------- Always First!!!!! -------------------- */
+            function empezalo() {
+                
+                campo.atributos();
+                bolita = new componente(WAH, WAH, Wh, Hh, blanco);
+                jugadorUno = new componente(WW, HH, wW1, hH, blanco);
+                jugadorDos = new componente(WW, HH, wW2, hH, blanco);
+                
+                redibujalo();
+                
+            }
+
+            var campo = {
+                cosa : document.createElement("canvas"),
+                
+                atributos : function() {
+                    this.cosa.width = campoDeche;
+                    this.cosa.height = campoAbajo;
+                    this.context = this.cosa.getContext("2d");
+                    document.body.insertBefore(this.cosa, document.body.childNodes[0]);
+                    this.interval = setInterval(redibujalo, 20);
+                    
+                    window.addEventListener('keydown', function (e) {
+                        campo.key = (campo.key || []);
+                        campo.key[e.keyCode] = true;
+                    })
+                    window.addEventListener('keyup', function (e) {
+                        campo.key[e.keyCode] = false;
+                    })
+                } ,
+                
+                clear : function() {
+                    this.context.clearRect(0, 0, this.cosa.width, this.cosa.height);
+                } ,
+                
+                stop : function() {
+                    clearInterval(this.interval);
+                }
+            }
+            
+            function componente(w, h, x, y, c) {
+                
+                this.w = w;
+                this.h = h;
+                this.velozX = 0;
+                this.velozY = 0;
+                this.x = x;
+                this.y = y;
+                
+                this.Izqui = this.x;
+                this.Deche = this.x + this.w;
+                this.Aribi = this.y;
+                this.Abajo = this.y + this.h;
+                
+                this.update = function() {
+                    cuacua = campo.context;
+                    cuacua.fillStyle = c;
+                    cuacua.fillRect(this.x, this.y, this.w, this.h);
+                }
+                
+                this.nuevaPos = function() {
+                    this.x += this.velozX;
+                    this.y += this.velozY;
+                }
+                
+            }
+            
+            function laFisica() {
+                
+                if ( (bolita.Izqui <= jugadorUno.Deche) && (jugadorUno.Aribi <= bolita.Abajo) && (jugadorUno.Abajo >= bolita.Aribi) ) {
+                    bolita.velozX = 0;
+                    bolita.velozY = 0;
+                    bolita.x = 0;
+                    bolita.y = 0;
+                }
+                
+                if ( (bolita.Deche >= jugadorDos.Izqui) && (jugadorDos.Aribi <= bolita.Abajo) && (jugadorDos.Abajo >= bolita.Aribi) ) {
+                    bolita.velozX = 0;
+                    bolita.velozY = 0;
+                    bolita.x = 0;
+                    bolita.y = 0;
+                }
+                
+            }
+            
+            function redibujalo() {
+                
+                campo.clear();
+                campo.velozY = 0;
+                
+                if ((jugadorUno.Aribi > campoAribi) || (jugadorUno.Abajo < campoAbajo)) {
+                    jugadorUno.velozY = 0;
+                }
+                
+                if ((jugadorDos.Aribi > campoAribi) || (jugadorDos.Abajo < campoAbajo)) {
+                    jugadorDos.velozY = 0;
+                }
+                
+                laFisica();
+                
+                if (campo.key && campo.key [87]) {jugadorUno.velozY = -5; }
+                if (campo.key && campo.key [83]) {jugadorUno.velozY = 5; }
+
+                if (campo.key && campo.key [79]) {jugadorDos.velozY = -5; }
+                if (campo.key && campo.key [76]) {jugadorDos.velozY = 5; }
+                
+                jugadorUno.nuevaPos();
+                jugadorDos.nuevaPos();
+                bolita.nuevaPos();
+
+                bolita.update();
+                jugadorUno.update();
+                jugadorDos.update();
+                
+            }
+            
+        </script>
+        
+    </body>
+    
+</html>
