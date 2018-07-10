@@ -13,7 +13,6 @@
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     float: left;
-    margin-bottom: 1em;
     padding: 0.5em;
 }
 
@@ -32,10 +31,11 @@
     .col-12 {width: 100%;}
     
     .container {width: 100%;}
-    .nav a {width: 50%;}
+    .nav a {width: 50%; font-size: 1em; padding: 0.5em;}
+    .meetUs div {width: 100%;}
 }
 
-@media screen and (min-width: 701px) and (max-width: 999px) {
+@media screen and (min-width: 701px) and (max-width: 1199px) {
     .col-1 {width: 25%;}
     .col-2 {width: 25%;}
     .col-3 {width: 25%;}
@@ -50,10 +50,12 @@
     .col-12 {width: 100%;}
     
     .container {width: 100%;}
-    .nav a {width: 50%;}
+    .nav a {width: 50%; font-size: 1.5em; padding: 0.25em;}
+    .meetUs div {width: 50%;}
+    .meetUs #soyYo {margin-left: 25%; margin-right: 25%;}
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
     .col-1 {width: 8.333%;}
     .col-2 {width: 16.666%;}
     .col-3 {width: 25%;}
@@ -68,5 +70,6 @@
     .col-12 {width: 100%;}
     
     .container {width: 100%;}
-    .nav a {width: 25%;}
+    .nav a {width: 25%; font-size: 1.5em; padding: 0.25em;}
+    .meetUs div {width: 20%;}
 }
