@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+:root {
+    --red: hsl(0, 100%, 45%);
+    --blu: hsl(225, 100%, 60%);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
+p, a {
+    font-family: 'Lato', sans-serif;
+    color: hsl(0, 0%, 10%);
+}
+
+p {
+    font-size: 1.5em;
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    color: var(--red);
+    background-color: White;
+    padding: 1% 0px;
+}
+
+.header h1 {
+    color: var(--red);
+    background-color: White;
+    font-size: 5em;
+    display: inline-block;
+    width: 74%;
+    vertical-align: middle;
+    margin-left: 2.5%;
+}
+
+#logo {
+    display: inline-block;
+    width: 20%;
+    vertical-align: middle;
+    margin-right: 2.5%;
+}
+
+.nav {
+    top: 0;
+    position: sticky;
+    z-index: 2;
+}
+
+.nav a {
+    text-decoration: none;
+    background-color: White;
+    display: inline-block;
+    color: var(--blu);
+    float: left;
+    text-align: center;
+    border-bottom: 2.5px var(--blu) Solid;
+    font-weight: 600;
+    font-variant-caps: all-petite-caps;
+    letter-spacing: 5px;
+}
+
+.nav a:hover {
+    background-color: var(--blu);
+    color: White;
+    transition: 0.5s;
+}
+
+.nav .active {
+    background-color: var(--blu);
+    color: White;
+    transition: 0.5s;
+}
+
+.laLinea {
+    width: 95%;
+    height: 5px;
+    background-color: var(--red);
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 0.5em;
+    border-radius: 5px;
+}
+
+.meetUs div {
+    float: left;
+    margin-bottom: 1em;
+}
+
+.meetUs div img {
+    border-radius: 50%;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    transition: 0.25s;
+}
+
+.meetUs div img:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.meetUs div h1 {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.75em;
+}
+
+.meetUs div p {
+    text-align: center;
+    font-size: 1.25em;
+    color: hsl(0, 100%, 60%);
+    font-weight: 600;
+}
+
+.footer {
+    background-color: var(--blu);
+    padding: 0.5em;
+}
+
+.footer div p {
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    font-variant-caps: all-petite-caps;
+    letter-spacing: 2px;
+}
+
+.footer div p a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer div p a:hover {
+    color: gainsboro;
+}
+
+.l {
+    text-align: left;
+}
+
+.c {
+    text-align: center;
+}
+
+.r {
+    text-align: right;
+}
