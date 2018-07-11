@@ -39,16 +39,12 @@ img {
     background-color: White;
     font-size: 5em;
     display: inline-block;
-    width: 74%;
     vertical-align: middle;
-    margin-left: 2.5%;
 }
 
 #logo {
     display: inline-block;
-    width: 20%;
     vertical-align: middle;
-    margin-right: 2.5%;
 }
 
 .nav {
@@ -94,7 +90,7 @@ img {
 
 .meetUs div {
     float: left;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .meetUs div img {
