@@ -33,6 +33,8 @@
     .container {width: 100%;}
     .nav a {width: 50%; font-size: 1em; padding: 0.5em;}
     .meetUs div {width: 100%;}
+    .header h1 {width: 95%; margin-left: 5%}
+    #logo {width: 50%; margin-left: 50%;}
 }
 
 @media screen and (min-width: 701px) and (max-width: 1199px) {
@@ -53,6 +55,8 @@
     .nav a {width: 50%; font-size: 1.5em; padding: 0.25em;}
     .meetUs div {width: 50%;}
     .meetUs #soyYo {margin-left: 25%; margin-right: 25%;}
+    .header h1 {width: 74%; margin-left: 2.5%;}
+    #logo {width: 20%; margin-right: 2.5%;}
 }
 
 @media screen and (min-width: 1200px) {
@@ -72,4 +76,6 @@
     .container {width: 100%;}
     .nav a {width: 25%; font-size: 1.5em; padding: 0.25em;}
     .meetUs div {width: 20%;}
+    .header h1 {width: 74%; margin-left: 2.5%;}
+    #logo {width: 20%; margin-right: 2.5%;}
 }
