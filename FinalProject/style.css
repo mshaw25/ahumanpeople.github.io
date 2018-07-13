@@ -172,11 +172,11 @@ p a:hover {
     padding: 2%;
 }
 
-.hereWeAre:nth-child(odd) {
+.hereWeAre:nth-child(even) {
     background-color: var(--blu);
 }
 
-.hereWeAre:nth-child(even) {
+.hereWeAre:nth-child(odd) {
     background-color: White;
 }
 
@@ -195,11 +195,11 @@ p a:hover {
     font-size: 1.5em;
 }
 
-.hereWeAre:nth-child(odd) > h2 {
+.hereWeAre:nth-child(even) > h2 {
     color: hsl(0, 0%, 70%);
 }
 
-.hereWeAre:nth-child(even) > h2 {
+.hereWeAre:nth-child(odd) > h2 {
     color: hsl(0, 0%, 40%);
 }
 
