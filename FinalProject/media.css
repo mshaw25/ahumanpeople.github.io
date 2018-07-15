@@ -31,7 +31,7 @@
     .col-12 {width: 100%;}
     
     .container {width: 100%;}
-    .nav a {width: 50%; font-size: 1.5em; padding: 0.5em;}
+    .nav a {width: 50%; font-size: 1em; padding: 1em 0.5em;}
     .botoneta {width: 100%; font-size: 2em; padding: 1em;}
     .meetUs div {width: 100%;}
     .header h1 {width: 95%; margin-left: 5%}
@@ -40,6 +40,12 @@
     .hereWeAre {width: 100%; box-shadow: 0px;}
     .hereWeAre h1 {font-size: 4em;}
     .hereWeAre h2 {font-size: 2.5em;}
+    
+    .timeline::after {left: 31px;}
+    .contenedor {width: 100%; padding-left: 70px; padding-right: 25px;}
+    .contenedor::before {left: 60px; border: medium solid hsl(225, 100%, 60%); border-width: 10px 10px 10px 0; border-color: transparent hsl(225, 100%, 60%) transparent transparent;}
+    .izqui::after, .deche::after {left: 15px;}
+    .deche {left: 0%;}
 }
 
 @media screen and (min-width: 801px) and (max-width: 1199px) {
