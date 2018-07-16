@@ -60,9 +60,9 @@ img {
 
 .nav a {
     text-decoration: none;
-    background-color: White;
+    background-color: var(--blu);
     display: inline-block;
-    color: var(--blu);
+    color: White;
     float: left;
     text-align: center;
     border-bottom: 2.5px var(--blu) Solid;
@@ -72,15 +72,14 @@ img {
 }
 
 .nav a:hover {
-    background-color: var(--blu);
-    color: White;
+    background-color: White);
+    color: var(--blu);
     transition: 0.5s;
 }
 
 .nav .active {
-    background-color: var(--blu);
-    color: White;
-    transition: 0.5s;
+    background-color: White;
+    color: var(--blu);
 }
 
 p a:hover {
