@@ -72,7 +72,7 @@ img {
 }
 
 .nav a:hover {
-    background-color: White);
+    background-color: White;
     color: var(--blu);
     transition: 0.5s;
 }
